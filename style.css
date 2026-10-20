@@ -1,0 +1,84 @@
+/* ========================================================================= */
+/* [NOTES CUSTOM STYLING CSS]: Layout Full-Width & Sticky Footer Flexbox     */
+/* ========================================================================= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    /* Menggunakan gambar sebagai background */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('foto/background.jpg') no-repeat center center fixed;
+background-size: cover; /* Agar gambar otomatis melebar menutupi layar */
+}
+
+/* Kontainer membentang full layar dan mendorong footer ke bawah */
+.content-wrapper {
+    flex: 1;
+    width: 100%;
+}
+
+/* Banner Hero Beranda Full Width */
+.hero-section {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+    color: white;
+    border-radius: 1rem;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+/* Styling Foto Profil */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Styling Gambar Galeri */
+.galeri-img {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Card Styling Full Width */
+.card {
+    border: none;
+    border-radius: 1rem;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Navbar Navs & Pills */
+.nav-pills .nav-link {
+    color: #495057;
+    font-weight: 500;
+    border-radius: 50rem;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.35);
+}
+
+/* Footer terkunci rapi di bawah layar penuh */
+footer {
+    background-color: #212529;
+    color: #adb5bd;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    width: 100%;
+}

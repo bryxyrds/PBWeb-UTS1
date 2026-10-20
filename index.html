@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS Pemrograman Berbasis Platform - Bernardus Febrian</title>
+
+    <!-- [NOTES BOOTSTRAP CSS]: Menghubungkan library Bootstrap 5 dari CDN untuk grid, card, form, & navbar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- [NOTES FONT & ICON]: Menghubungkan Google Font Poppins dan Icon FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- ========================================================================= -->
+    <!-- [TEMPAT MENGHUBUNGKAN CSS EXT]: Di sini file style.css dihubungkan        -->
+    <!-- ========================================================================= -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- [NOTES BOOTSTRAP NAVBAR]: Komponen Navbar responsif Bootstrap dengan Navs & Pills -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm px-3">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-laptop-code me-2 text-info"></i>UTS PBWeb USD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-beranda-tab" data-bs-toggle="pill" data-bs-target="#pills-beranda" type="button" role="tab"><i class="fas fa-home me-1"></i> Beranda</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-tentang-tab" data-bs-toggle="pill" data-bs-target="#pills-tentang" type="button" role="tab"><i class="fas fa-user me-1"></i> Tentang</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-pendidikan-tab" data-bs-toggle="pill" data-bs-target="#pills-pendidikan" type="button" role="tab"><i class="fas fa-graduation-cap me-1"></i> Pendidikan</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-galeri-tab" data-bs-toggle="pill" data-bs-target="#pills-galeri" type="button" role="tab"><i class="fas fa-images me-1"></i> Galeri</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-tugas-tab" data-bs-toggle="pill" data-bs-target="#pills-tugas" type="button" role="tab"><i class="fas fa-tasks me-1"></i> Tugas</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- [CONTENT WRAPPER FULL-WIDTH]: Menggunakan container-fluid agar memenuhi layar penuh -->
+    <div class="content-wrapper container-fluid px-4 my-4">
+        <div class="tab-content" id="pills-tabContent">
+            
+            <!-- SECTION 1: BERANDA -->
+            <div class="tab-pane fade show active" id="pills-beranda" role="tabpanel">
+                <div class="hero-section text-center shadow py-5">
+                    <!-- [TEMPAT SIMPAN FOTO PROFIL]: images/profile.jpg -->
+                    <img src="foto/foto-profil.jpg" alt="Foto Profil" class="rounded-circle profile-img mb-4" onerror="this.src='https://via.placeholder.com/180?text=Brian'">
+                    <h1 class="display-5 fw-bold mb-2">Bernardus Febrian (Brian)</h1>
+                    <p class="lead mb-3">Mahasiswa Program Studi Teknik Informatika - Universitas Sanata Dharma</p>
+                    <div class="d-inline-flex gap-2">
+                        <span class="badge bg-light text-dark px-3 py-2 fs-6"><i class="fas fa-id-card me-1 text-primary"></i> NIM: 255314060</span>
+                        <span class="badge bg-warning text-dark px-3 py-2 fs-6"><i class="fas fa-star me-1"></i> Semester 3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: TENTANG (Dengan Foto) -->
+            <div class="tab-pane fade" id="pills-tentang" role="tabpanel">
+                <div class="card shadow p-4 p-md-5 w-100">
+                    <h2 class="text-center fw-bold mb-4 text-primary">Tentang Diriku</h2>
+                    <div class="row align-items-center">
+                        <!-- KOLOM KIRI: Foto Tambahan di Menu Tentang -->
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <!-- [TEMPAT SIMPAN FOTO TENTANG]: Bisa pakai foto lain, cth: images/tentang.jpg -->
+                            <img src="foto/brian-pp.png" alt="Foto Tentang" class="img-fluid rounded-4 shadow" style="max-height: 280px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x350?text=Foto+Brian'">
+                        </div>
+                        <!-- KOLOM KANAN: Paragraf Deskripsi Diri -->
+                        <div class="col-md-8">
+                        <p class="text-muted lh-lg text-justify">
+                        Halo! Perkenalkan, nama saya Bernardus Febrian, biasa
+                        dipanggil Brian. Saya berasal dari Ketapang, Kalimantan
+                        Barat, dan saat ini sedang menempuh pendidikan sebagai
+                        mahasiswa semester 3 Program Studi Informatika di
+                        Universitas Sanata Dharma, Yogyakarta.
+                    </p>
+                    <p class="text-muted lh-lg text-justify">
+                        Saya merupakan pribadi yang memiliki rasa ingin tahu
+                        yang tinggi, senang mempelajari hal-hal baru, dan tertarik
+                        untuk terus mengembangkan kemampuan diri, baik dalam
+                        bidang akademik maupun nonakademik. Salah satu bidang
+                        yang paling menarik perhatian saya adalah teknologi
+                        informasi, khususnya pemrograman dan pengembangan
+                        perangkat lunak (software development). Bagi saya, dunia
+                        pemrograman bukan hanya tentang menulis kode, tetapi juga
+                        tentang bagaimana memahami suatu permasalahan, menyusun
+                        solusi secara logis, dan mengembangkan sebuah sistem yang
+                        dapat memberikan manfaat bagi penggunanya.
+                    </p>
+                    <p class="text-muted lh-lg text-justify">
+                        Ketertarikan saya terhadap dunia pemrograman tumbuh
+                        seiring dengan proses belajar di bangku perkuliahan.
+                        Saya mulai tertarik untuk memahami bagaimana sebuah
+                        aplikasi atau website dibangun, bagaimana setiap bagian
+                        di dalamnya saling terhubung, serta bagaimana teknologi
+                        dapat digunakan untuk menciptakan solusi yang lebih
+                        efektif dan efisien. Saya ingin terus memperdalam
+                        pemahaman mengenai berbagai bahasa pemrograman, logika
+                        komputasi, pengembangan website, serta proses perancangan
+                        dan pengembangan perangkat lunak secara keseluruhan.
+                        Bagi saya, setiap kesalahan dalam proses coding merupakan
+                        bagian dari pembelajaran yang membantu saya memahami
+                        suatu konsep dengan lebih baik.
+                    </p>
+                    <p class="text-muted lh-lg text-justify mb-0">
+                        Saya menyadari bahwa kemampuan di bidang teknologi
+                        tidak dapat diperoleh secara instan. Oleh karena itu,
+                        saya berusaha untuk terus belajar, mencoba hal-hal baru,
+                        dan membangun pemahaman yang kuat dari dasar. Saya tidak
+                        hanya ingin mampu menggunakan teknologi yang sudah
+                        tersedia, tetapi juga memahami cara kerjanya dan
+                        mengembangkan kemampuan untuk menciptakan aplikasi atau
+                        perangkat lunak sendiri. Saya berharap ilmu yang saya
+                        pelajari selama kuliah dapat menjadi bekal untuk
+                        mengembangkan kemampuan teknis, pola pikir analitis,
+                        kreativitas, serta kesiapan dalam menghadapi perkembangan
+                        teknologi yang semakin pesat.
+                    </p>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- SECTION 3: PENDIDIKAN -->
+            <div class="tab-pane fade" id="pills-pendidikan" role="tabpanel">
+                <div class="card shadow p-4 w-100">
+                    <h2 class="text-center fw-bold mb-4 text-primary"><i class="fas fa-school me-2"></i>Riwayat Pendidikan</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col" width="18%">Tahun</th>
+                                    <th scope="col" width="42%">Nama Sekolah / Kampus</th>
+                                    <th scope="col" width="40%">Alamat Sekolah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-secondary">2010 - 2013</span></td>
+                                    <td class="fw-semibold">
+                                        <a href="https://www.google.com/search?q=TK+Santa+Theresia+Ketapang" target="_blank" class="text-decoration-none text-primary">
+                                            TK Santa Theresia Ketapang <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </td>
+                                    <td>Jl. Penembahan Airmala No. 2B, Ketapang, Kalbar</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-secondary">2013 - 2019</span></td>
+                                    <td class="fw-semibold">
+                                        <a href="https://sdsantamonica.sch.id" target="_blank" class="text-decoration-none text-primary">
+                                            SD Santa Monica Ketapang <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </td>
+                                    <td>Jl. Penembahan Airmala No. 2B, Ketapang, Kalbar</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-secondary">2019 - 2021</span></td>
+                                    <td class="fw-semibold">
+                                        <a href="https://smpagustinusketapang.sch.id" target="_blank" class="text-decoration-none text-primary">
+                                            SMP Santo Agustinus Ketapang <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </td>
+                                    <td>Jl. Penembahan Airmala No. 2, Ketapang, Kalbar</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-secondary">2021 - 2022</span></td>
+                                    <td class="fw-semibold">
+                                        <a href="http://smpkanisiusgayam.sch.id" target="_blank" class="text-decoration-none text-primary">
+                                            SMP Kanisius Gayam <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </td>
+                                    <td>Jl. Dr. Soetomo No. 16, Yogyakarta</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-secondary">2022 - 2025</span></td>
+                                    <td class="fw-semibold">
+                                        <a href="https://smabopkri2jogja.sch.id" target="_blank" class="text-decoration-none text-primary">
+                                            SMA BOPKRI 2 Yogyakarta <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </td>
+                                    <td>Jl. Jend. Soedirman No. 87, Yogyakarta</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-success">2025 - Sekarang</span></td>
+                                    <td class="fw-semibold">
+                                        <a href="https://www.usd.ac.id" target="_blank" class="text-decoration-none text-primary">
+                                            Universitas Sanata Dharma <i class="fas fa-external-link-alt ms-1 small"></i>
+                                        </a>
+                                    </td>
+                                    <td>Kampus III Paingan, Maguwoharjo, Sleman, Yogyakarta</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 4: GALERI (Banyak Foto) -->
+            <div class="tab-pane fade" id="pills-galeri" role="tabpanel">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-primary">Aku dan kegiatanku</h2>
+                    <p class="text-muted">Kumpulan foto dan momen berharga bersama orang-orang terdekatku.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- FOTO 1 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+                            <!-- [TEMPAT SIMPAN FOTO GALERI 1]: images/galeri1.jpg -->
+                            <img src="foto/brian-ziarah.jpg" class="card-img-top galeri-img" alt="Foto 1" onerror="this.src='https://via.placeholder.com/400x250?text=Diskusi+Kampus'">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Ziarah Gua Maria</h5>
+                                <p class="card-text text-muted small">Momen Ziarah Gua Maria bersama orang tersayang.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FOTO 2 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+                            <!-- [TEMPAT SIMPAN FOTO GALERI 2]: images/galeri2.jpg -->
+                            <img src="foto/brian-festival.jpg" class="card-img-top galeri-img" alt="Foto 2" onerror="this.src='https://via.placeholder.com/400x250?text=Latihan+Musik'">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Eksplorasi Musik</h5>
+                                <p class="card-text text-muted small">Momen Memeriahkan Festival Musik Bersama teman-teman bandku.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FOTO 3 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+                            <!-- [TEMPAT SIMPAN FOTO GALERI 3]: images/galeri3.jpg -->
+                            <img src="foto/brian-liburan.JPG" class="card-img-top galeri-img" alt="Foto 3" onerror="this.src='https://via.placeholder.com/400x250?text=Wisata+Yogyakarta'">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Jalan-Jalan / Traveling</h5>
+                                <p class="card-text text-muted small">Momen menikmati perjalanan wisata dan kuliner.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FOTO 4 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+                            <!-- [TEMPAT SIMPAN FOTO GALERI 4]: images/galeri4.jpg -->
+                            <img src="foto/brian-kegiatan.JPG" class="card-img-top galeri-img" alt="Foto 4" onerror="this.src='https://via.placeholder.com/400x250?text=Momen+OSIS'">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Presentasi</h5>
+                                <p class="card-text text-muted small">Momen presentasi saat study banding HMIF ke SCU Semarang.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FOTO 5 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+                            <!-- [TEMPAT SIMPAN FOTO GALERI 5]: images/galeri5.jpg -->
+                            <img src="foto/brian-pinissi.JPG" class="card-img-top galeri-img" alt="Foto 5" onerror="this.src='https://via.placeholder.com/400x250?text=Festival+Musik'">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">PINISSI 2026</h5>
+                                <p class="card-text text-muted small">Momen berharga bersama teman-teman di acara PINISSI 2026.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FOTO 6 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+                            <!-- [TEMPAT SIMPAN FOTO GALERI 6]: images/galeri6.jpg -->
+                            <img src="foto/brian-gunung.jpg" class="card-img-top galeri-img" alt="Foto 6" onerror="this.src='https://via.placeholder.com/400x250?text=Keluarga'">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Naik Gunung</h5>
+                                <p class="card-text text-muted small">Momen menyenangkan saat naik gunung bersama teman-teman.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: TUGAS INTERAKTIF JAVASCRIPT -->
+            <div class="tab-pane fade" id="pills-tugas" role="tabpanel">
+                <div class="card shadow p-4 p-md-5 w-100">
+                    <h2 class="fw-bold text-primary mb-3"><i class="fas fa-laptop-code me-2"></i>Form Interaktif Tugas JavaScript</h2>
+                    <p class="text-muted mb-4">Lengkapi formulir di bawah ini sesuai tahapan petunjuk modul.</p>
+                    
+                    <!-- STEP 1: Input Data Utama -->
+                    <div id="step-1">
+                        <form id="form-tugas-1">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Nama Lengkap:</label>
+                                    <input type="text" class="form-control" id="input-nama" placeholder="Masukkan nama lengkap" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Alamat:</label>
+                                    <input type="text" class="form-control" id="input-alamat" placeholder="Masukkan alamat" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Email:</label>
+                                    <input type="email" class="form-control" id="input-email" placeholder="nama@email.com" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Jumlah Bahasa:</label>
+                                    <input type="number" class="form-control" id="jml-bhs" min="1" max="10" placeholder="Cth: 3" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Jumlah Hobi:</label>
+                                    <input type="number" class="form-control" id="jml-hobi" min="1" max="10" placeholder="Cth: 4" required>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="button" class="btn btn-primary px-4 py-2 fw-bold shadow-sm" onclick="prosesStep1()"><i class="fas fa-arrow-right me-2"></i>OK (Lanjut)</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- STEP 2: Input Isian Bahasa & Hobi Sesuai Jumlah -->
+                    <div id="step-2" style="display: none;" class="mt-3">
+                        <hr class="my-4">
+                        <h4 class="text-secondary fw-bold mb-3">Masukkan Rincian Bahasa & Hobi</h4>
+                        <div id="container-bahasa" class="mb-3"></div>
+                        <div id="container-hobi" class="mb-3"></div>
+                        <button type="button" class="btn btn-success px-4 py-2 fw-bold shadow-sm" onclick="prosesStep2()"><i class="fas fa-check me-2"></i>OK (Proses Pilihan)</button>
+                    </div>
+
+                    <!-- STEP 3: Radio Button (Bahasa) & Checkbox (Hobi) -->
+                    <div id="step-3" style="display: none;" class="mt-3">
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h5 class="fw-bold text-dark"><i class="fas fa-language me-2 text-primary"></i>Pilihan Bahasa (Pilih Satu):</h5>
+                                <div id="radio-bahasa-container" class="p-3 bg-light rounded border"></div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h5 class="fw-bold text-dark"><i class="fas fa-heart me-2 text-danger"></i>Pilihan Hobi (Boleh Lebih dari Satu):</h5>
+                                <div id="checkbox-hobi-container" class="p-3 bg-light rounded border"></div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary px-4 py-2 fw-bold shadow-sm mt-3" onclick="prosesStep3()"><i class="fas fa-paper-plane me-2"></i>OK (Tampilkan Hasil)</button>
+                    </div>
+
+                    <!-- STEP 4: Paragraf Hasil Akhir Pengumpulan UTS -->
+                    <div id="step-4" style="display: none;" class="mt-4">
+                        <hr class="my-4">
+                        <div class="alert alert-success shadow-sm p-4" role="alert">
+                            <h4 class="alert-heading fw-bold mb-3"><i class="fas fa-check-circle me-2"></i>Pengumpulan UTS - Hasil Output</h4>
+                            <p id="output-teks" class="mb-0 fs-6 lh-lg"></p>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary mt-3" onclick="resetForm()"><i class="fas fa-redo me-2"></i>Ulangi Form</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- [FOOTER STICKY]: Selalu terkunci rapi di paling bawah layar -->
+    <footer class="text-center py-4 bg-dark text-white-50 w-100">
+        <div class="container-fluid">
+            <p class="mb-0">&copy; 2026 Bernardus Febrian - Universitas Sanata Dharma.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- [NOTES BOOTSTRAP JS CDN]: Library JavaScript bawaan Bootstrap untuk Tab/Nav -->
+    <!-- ========================================================================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ========================================================================= -->
+    <!-- [NOTES CUSTOM JS LOGIC]: Kodingan logika interaktif JavaScript sesuai modul -->
+    <!-- ========================================================================= -->
+    <script>
+        let dataGlobal = {
+            nama: '', alamat: '', email: '',
+            jmlBhs: 0, jmlHobi: 0,
+            arrBahasa: [], arrHobi: []
+        };
+
+        function prosesStep1() {
+            const nama = document.getElementById('input-nama').value.trim();
+            const alamat = document.getElementById('input-alamat').value.trim();
+            const email = document.getElementById('input-email').value.trim();
+            const jmlBhs = parseInt(document.getElementById('jml-bhs').value);
+            const jmlHobi = parseInt(document.getElementById('jml-hobi').value);
+
+            // 1. Validasi Nama: Tidak boleh kosong, minimal 3 karakter, dan hanya huruf/spasi
+            const namaRegex = /^[A-Za-z\s]+$/;
+            if (!nama || nama.length < 3) {
+                alert('Nama lengkap harus diisi minimal 3 karakter!');
+                document.getElementById('input-nama').focus();
+                return;
+            }
+            if (!namaRegex.test(nama)) {
+                alert('Format nama tidak valid! Nama hanya boleh berisi huruf dan spasi.');
+                document.getElementById('input-nama').focus();
+                return;
+            }
+
+            // 2. Validasi Alamat: Tidak boleh kosong
+            if (!alamat) {
+                alert('Alamat wajib diisi!');
+                document.getElementById('input-alamat').focus();
+                return;
+            }
+
+            // 3. Validasi Format Email: Harus menggunakan format email yang valid (contoh: nama@domain.com)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                alert('Format email salah atau tidak valid! (Contoh yang benar: brian@email.com)');
+                document.getElementById('input-email').focus();
+                return;
+            }
+
+            // 4. Validasi Jumlah Bahasa: Harus angka bulat antara 1 sampai 10
+            if (isNaN(jmlBhs) || jmlBhs <= 0 || jmlBhs > 10) {
+                alert('Jumlah Bahasa harus berupa angka antara 1 sampai 10!');
+                document.getElementById('jml-bhs').focus();
+                return;
+            }
+
+            // 5. Validasi Jumlah Hobi: Harus angka bulat antara 1 sampai 10
+            if (isNaN(jmlHobi) || jmlHobi <= 0 || jmlHobi > 10) {
+                alert('Jumlah Hobi harus berupa angka antara 1 sampai 10!');
+                document.getElementById('jml-hobi').focus();
+                return;
+            }
+
+            // Jika semua lolos validasi, simpan data ke objek global
+            dataGlobal.nama = nama;
+            dataGlobal.alamat = alamat;
+            dataGlobal.email = email;
+            dataGlobal.jmlBhs = jmlBhs;
+            dataGlobal.jmlHobi = jmlHobi;
+
+            // Generate Input Teks Dinamis untuk Bahasa
+            let htmlBhs = '<h6 class="fw-bold text-primary">Isian Nama Bahasa:</h6>';
+            for (let i = 1; i <= jmlBhs; i++) {
+                htmlBhs += `<div class="mb-2"><input type="text" class="form-control input-bhs-item" placeholder="Bahasa ke-${i}" required></div>`;
+            }
+            document.getElementById('container-bahasa').innerHTML = htmlBhs;
+
+            // Generate Input Teks Dinamis untuk Hobi
+            let htmlHobi = '<h6 class="fw-bold text-danger">Isian Nama Hobi:</h6>';
+            for (let i = 1; i <= jmlHobi; i++) {
+                htmlHobi += `<div class="mb-2"><input type="text" class="form-control input-hobi-item" placeholder="Hobi ke-${i}" required></div>`;
+            }
+            document.getElementById('container-hobi').innerHTML = htmlHobi;
+
+            // Sembunyikan Step 1, Tampilkan Step 2
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+        }
+
+        // Fungsi lanjutan tetap sama (prosesStep2, prosesStep3, resetForm)...
+        function prosesStep2() {
+            const inputBhsElems = document.querySelectorAll('.input-bhs-item');
+            const inputHobiElems = document.querySelectorAll('.input-hobi-item');
+
+            dataGlobal.arrBahasa = [];
+            dataGlobal.arrHobi = [];
+
+            for (let el of inputBhsElems) {
+                if (!el.value.trim()) {
+                    alert('Semua isian bahasa wajib diisi!');
+                    el.focus();
+                    return;
+                }
+                dataGlobal.arrBahasa.push(el.value.trim());
+            }
+
+            for (let el of inputHobiElems) {
+                if (!el.value.trim()) {
+                    alert('Semua isian hobi wajib diisi!');
+                    el.focus();
+                    return;
+                }
+                dataGlobal.arrHobi.push(el.value.trim());
+            }
+
+            let radioHtml = '';
+            dataGlobal.arrBahasa.forEach((bhs, index) => {
+                radioHtml += `
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="pilihanBahasa" id="bhs_${index}" value="${bhs}" ${index === 0 ? 'checked' : ''}>
+                        <label class="form-check-label fw-medium" for="bhs_${index}">${bhs}</label>
+                    </div>`;
+            });
+            document.getElementById('radio-bahasa-container').innerHTML = radioHtml;
+
+            let checkHtml = '';
+            dataGlobal.arrHobi.forEach((hobi, index) => {
+                checkHtml += `
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" name="pilihanHobi" id="hobi_${index}" value="${hobi}">
+                        <label class="form-check-label fw-medium" for="hobi_${index}">${hobi}</label>
+                    </div>`;
+            });
+            document.getElementById('checkbox-hobi-container').innerHTML = checkHtml;
+
+            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-3').style.display = 'block';
+        }
+
+        function prosesStep3() {
+            const selectedRadio = document.querySelector('input[name="pilihanBahasa"]:checked');
+            const pilihanBahasaVal = selectedRadio ? selectedRadio.value : '-';
+
+            const selectedCheckboxes = document.querySelectorAll('input[name="pilihanHobi"]:checked');
+            let pilihanHobiArr = [];
+            selectedCheckboxes.forEach(cb => pilihanHobiArr.push(cb.value));
+            const pilihanHobiVal = pilihanHobiArr.length > 0 ? pilihanHobiArr.join(', ') : 'tidak ada yang dipilih';
+
+            const listBhsStr = dataGlobal.arrBahasa.join(', ');
+            const listHobiStr = dataGlobal.arrHobi.join(', ');
+
+            const hasilTeks = `Hallo, nama saya ${dataGlobal.nama}, alamat ${dataGlobal.alamat}, email ${dataGlobal.email} saya mempunyai ${dataGlobal.jmlBhs} pilihan Bahasa yaitu ${listBhsStr}, dan saya memilih ${pilihanBahasaVal}. Saya juga mempunyai ${dataGlobal.jmlHobi} pilihan Hobi yaitu ${listHobiStr}, dan saya memilih ${pilihanHobiVal}`;
+
+            document.getElementById('output-teks').innerText = hasilTeks;
+
+            document.getElementById('step-3').style.display = 'none';
+            document.getElementById('step-4').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('form-tugas-1').reset();
+            document.getElementById('step-4').style.display = 'none';
+            document.getElementById('step-1').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
